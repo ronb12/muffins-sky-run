@@ -1,1 +1,111 @@
-body{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:#17324d;background:linear-gradient(#7dd3fc,#fef3c7)}main{width:min(1050px,calc(100% - 32px));margin:auto;padding:40px 0}.hero{padding:32px;border-radius:32px;background:#fff}.hero p{font-weight:900;color:#0284c7;text-transform:uppercase}h1{font-size:clamp(3.5rem,11vw,7rem);margin:0}button{margin-top:20px;border:0;border-radius:999px;padding:14px 20px;background:#0284c7;color:white;font-weight:900}.runner{position:relative;height:420px;margin-top:20px;border-radius:32px;background:linear-gradient(#38bdf8,#bae6fd);overflow:hidden}.runner b{position:absolute;left:12%;bottom:95px;border-radius:50%;padding:22px;background:#fff}.runner i{position:absolute;height:34px;border-radius:999px;background:#fff}.runner i:nth-child(2){left:8%;right:55%;bottom:70px}.runner i:nth-child(3){left:45%;right:25%;bottom:145px}.runner i:nth-child(4){left:70%;right:4%;bottom:220px}.runner span{position:absolute;right:30px;top:30px;border-radius:999px;padding:14px 18px;background:#facc15;font-weight:900}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Avenir Next", sans-serif;
+  color: #17314b;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.45), transparent 25%),
+    linear-gradient(180deg, #8fd7ff, #eefbff 55%, #c3f4d1 100%);
+}
+.shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 48px; }
+.hero, .panel, .metric, .hero-card, .loading-card {
+  border: 1px solid rgba(54,115,157,.22);
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 45px rgba(33,83,126,.14);
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+  gap: 18px;
+  border-radius: 28px;
+  padding: 24px;
+}
+.hero-card, .panel, .metric, .loading-card { border-radius: 22px; padding: 20px; }
+.eyebrow, .muted { text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; color: #2563eb; }
+h1 { margin: 10px 0 12px; font-size: clamp(2.7rem, 6vw, 4.6rem); line-height: .95; }
+.lede, .hero-card p { color: #32557a; }
+.subnav { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0; }
+.subnav-tab {
+  width: auto;
+  border: 1px solid rgba(54,115,157,.22);
+  background: rgba(255,255,255,.72);
+  color: #1d4ed8;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 12px 16px;
+}
+.subnav-tab.active { color: white; background: #1f7cf0; }
+.metrics, .split-layout, .spotlight-grid, .hangar-stats, .challenge-grid, .skin-grid, .route-stack, .runner-stats { display: grid; gap: 14px; }
+.metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 18px; }
+.metric strong { display: block; margin-top: 8px; font-size: 2rem; }
+.split-layout { grid-template-columns: 1.05fr 1fr; }
+.spotlight-grid, .hangar-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.challenge-grid, .skin-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.pilot-preview {
+  margin-top: 18px;
+  height: 160px;
+  border-radius: 22px;
+  background: linear-gradient(180deg,#8fd7ff,#eefbff 65%,#c3f4d1 65%);
+  position: relative;
+}
+.pilot-body {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  border-radius: 16px;
+  background: var(--accent, #8256ff);
+  box-shadow: 0 -10px 0 #f0b957 inset;
+}
+.runner-head, .runner-actions { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; }
+.runner-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.runner-stats span {
+  border-radius: 999px;
+  padding: 10px 12px;
+  background: #dff4ff;
+  font-weight: 800;
+}
+button {
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 16px;
+  color: white;
+  background: #1f7cf0;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+button.ghost { color: #1f5aa6; background: #eff7ff; }
+canvas {
+  width: 100%;
+  height: auto;
+  margin-top: 18px;
+  border-radius: 22px;
+  display: block;
+  background: linear-gradient(180deg,#83d7ff,#e9fbff 62%,#b6f2c3 62%,#8fd69b 100%);
+}
+.challenge-card, .skin-card, .empty-card {
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(54,115,157,.18);
+}
+.challenge-card.done { background: rgba(204,255,225,.86); }
+.skin-card.active { outline: 2px solid #1f7cf0; }
+.swatch {
+  width: 100%;
+  height: 72px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), #ffffff);
+  margin-bottom: 12px;
+}
+.small { font-size: .7rem; }
+@media (max-width: 900px) {
+  .hero, .metrics, .split-layout, .spotlight-grid, .hangar-stats, .runner-stats { grid-template-columns: 1fr; }
+}

@@ -1,1 +1,35 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Muffin's Sky Run Prototype</title><link rel="stylesheet" href="./styles.css"></head><body><main><section class="hero"><p>Prototype 9 • Endless runner game</p><h1>Muffin's Sky Run</h1><span>A bright endless runner with cloud platforms, coins, powerups, skins, and daily challenges.</span><button id="run">Start Run</button></section><section class="runner"><b>M</b><i></i><i></i><i></i><span>Coin x12</span></section></main><script src="./app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Muffin's Sky Run</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Frontend Differentiation Pass</p>
+          <h1>Muffin's Sky Run</h1>
+          <p class="lede">A bright sky-runner with hangar upgrades, daily goals, and an arcade-style run loop.</p>
+        </div>
+        <aside class="hero-card">
+          <span>Game loop</span>
+          <strong>Run -> collect -> unlock -> challenge</strong>
+          <p>Built to feel like a playful arcade game, not a dashboard.</p>
+        </aside>
+      </section>
+      <nav class="subnav" aria-label="Muffin's Sky Run views">
+        <button class="subnav-tab active" data-tab="hangar" type="button">Hangar</button>
+        <button class="subnav-tab" data-tab="run" type="button">Run</button>
+        <button class="subnav-tab" data-tab="challenges" type="button">Challenges</button>
+        <button class="subnav-tab" data-tab="wardrobe" type="button">Wardrobe</button>
+      </nav>
+      <section id="app" class="app-shell">
+        <div class="loading-card">Loading Muffin's Sky Run...</div>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
